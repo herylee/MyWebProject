@@ -4,12 +4,26 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	id="WebApp_ID" version="2.5">
 
+
+	<context-param>  <!-- 为整个web应用配置初始化参数值 -->
+	
+	<param-name>zzz</param-name>
+	<param-value>123231243</param-value>
+	</context-param>
+
+
 	<servlet>
 
 		<servlet-name>MyFirstServlet</servlet-name>
 		<servlet-class>a.b.c.MyFirstServlet</servlet-class>
-		<load-on-startup>1</load-on-startup>
-
+ 
+	<!-- 	<init-param> 
+		                     配置本servlet的初始化值
+		<param-name>user</param-name>
+		<param-value>admin</param-value>
+		</init-param>
+ -->
+	 
 	</servlet>
 
 	<servlet-mapping>
@@ -18,6 +32,33 @@
 
 
 	</servlet-mapping>
+
+ 
+ <servlet>
+
+		<servlet-name>MySecondServlet</servlet-name>
+		<servlet-class>a.b.c.MySecondServlet</servlet-class>
+ 
+
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>MySecondServlet</servlet-name>
+		<url-pattern>/MySecondServlet</url-pattern>
+
+
+	</servlet-mapping>
+ 
+
+
+
+
+
+
+
+
+
+
 
 
 

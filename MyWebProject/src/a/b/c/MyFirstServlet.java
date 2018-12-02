@@ -1,7 +1,9 @@
 package a.b.c;
 
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.Enumeration;
+import java.util.Properties;
 
 import javax.servlet.Servlet;
 import javax.servlet.ServletConfig;
@@ -12,8 +14,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.sun.xml.internal.fastinfoset.sax.Properties;
-
+ 
 public class MyFirstServlet implements Servlet {
 
 	// sadasdasdasdad
@@ -90,9 +91,31 @@ public class MyFirstServlet implements Servlet {
 //		Context.setAttribute("aaa", "111");
 		
 		
-		response.getWriter().println(Context.getInitParameter("zzz"));
+//		response.getWriter().println(Context.getInitParameter("zzz"));
 		
+		
+		
+		
+		
+		
+	/*	//读取properties文件，注意properties文件要放在webcontent根目录下
+		Properties pop =new Properties();
+		String popFileRealPath = Context.getRealPath("aaa.properties");
 
+		System.out.println(popFileRealPath);
+		pop.load(new FileReader(popFileRealPath));
+		System.out.println(pop.getProperty("user"));
+	
+		System.out.println(pop.getProperty("psd"));*/
+		
+		
+		
+		
+		
+		System.out.println(Context.getContextPath());  //获取当前context的路径
+		
+		
+		
 	}
 
 }
